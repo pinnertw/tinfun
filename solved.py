@@ -30,7 +30,7 @@ def get_aboves(data, index_1):
     return aboves
 
 def get_can_picks(data, holding, max_layer=0):
-    can_picks = [[] for i in range(max_layer + 1)]
+    can_picks = [[] for _ in range(max_layer + 1)]
     for i in range(len(data)):
         layer_count = get_layer(data, i)
         if layer_count <= max_layer:

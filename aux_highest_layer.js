@@ -48,6 +48,7 @@ images.forEach(img => {
       text.style.left = (rect.x + 3) + 'px';
       text.style.top = (rect.y + 18) + 'px';
       text.style.zIndex = 999;
+      text.style.fontWeight = 'bold';
       text.style.color = 'purple';
       text.innerHTML = num;
       document.body.appendChild(text);
@@ -80,9 +81,8 @@ images.forEach(img => {
         text.style.position = 'absolute';
         text.style.left = (rect.x + 18) + 'px';
         text.style.top = (rect.y + 18) + 'px';
-        text.style.zIndex = 999;
-        text.style.color = 'red';
-        text.innerHTML = "⬛";
+        text.style.zIndex = 998;
+        text.innerHTML = "🟦";
         document.body.appendChild(text);
       }
       // Add second layer
@@ -93,9 +93,8 @@ images.forEach(img => {
         text.style.position = 'absolute';
         text.style.left = (rect.x + 18) + 'px';
         text.style.top = (rect.y + 18) + 'px';
-        text.style.zIndex = 999;
-        text.style.color = 'green';
-        text.innerHTML = "🟫";
+        text.style.zIndex = 998;
+        text.innerHTML = "🟥";
         document.body.appendChild(text);
       }
       // Add layer count of the same symbol.
@@ -110,6 +109,7 @@ images.forEach(img => {
             text.style.left = (rect.x + 3) + 'px';
             text.style.top = (rect.y) + 'px';
             text.style.zIndex = 999;
+            text.style.fontWeight = 'bold';
             text.style.color = 'purple';
             text.innerHTML = num + 1;
             document.body.appendChild(text);
