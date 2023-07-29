@@ -98,11 +98,15 @@ images.forEach(img => {
         document.body.appendChild(text);
       }
       // Add layer count of the same symbol.
+      let same_symbol_count = 0;
       for (i = 0; i < images.length; i++) {
         if (images[i].src == event.target.src) {
+          if (!seen.has(i)) {
+            same_symbol_count++;
+          }
           let rect = images[i].getBoundingClientRect();
           let num = getNumAbove(images[i]);
-          if (num < 4) {
+          if (num < 8) {
             let text = document.createElement('p');
             text.className = 'test';
             text.style.position = 'absolute';
@@ -116,6 +120,17 @@ images.forEach(img => {
           }
         }
       }
+      // Print number of the symbol left.
+      text = document.createElement('p');
+      text.className = 'test';
+      text.style.position = 'absolute';
+      text.style.left = (rect.x + 3) + 'px';
+      text.style.top = (rect.y + 36) + 'px';
+      text.style.zIndex = 999;
+      text.style.fontWeight = 'bold';
+      text.style.color = 'purple';
+      text.innerHTML = same_symbol_count;
+      document.body.appendChild(text);
     }
   }
   img.onmousedown = function (event) {
